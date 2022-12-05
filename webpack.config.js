@@ -1,11 +1,11 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    app: './src/index.tsx'
+    app: './src/index.tsx',
   },
   devtool: 'inline-source-map',
   mode: isDevelopment ? 'development' : 'production',
@@ -16,17 +16,17 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/env']
-        }
+          presets: ['@babel/env'],
+        },
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.s[ac]ss$/i,
@@ -36,27 +36,30 @@ module.exports = {
           // 将 CSS 转化成 CommonJS 模块
           'css-loader',
           // 将 Sass 编译成 CSS
-          'sass-loader'
-        ]
-      }
-    ]
+          'sass-loader',
+        ],
+      },
+    ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.tsx', '.ts']
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+    extensions: ['*', '.js', '.jsx', '.tsx', '.ts'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
   },
   optimization: {
-    runtimeChunk: 'single'
+    runtimeChunk: 'single',
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public')
+      directory: path.join(__dirname, 'public'),
     },
     compress: true,
-    port: 8080
+    port: 8080,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -66,8 +69,8 @@ module.exports = {
       minify: {
         // 压缩HTML文件
         removeComments: true, // 去除注释
-        collapseWhitespace: true // 去除空格
-      }
-    })
-  ]
-}
+        collapseWhitespace: true, // 去除空格
+      },
+    }),
+  ],
+};
