@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".", // This must be specified if "paths" is.
     "paths": {
-      "@": ["src"] // This mapping is relative to "baseUrl"
+      "@": ["./src"] // This mapping is relative to "baseUrl"
     }
   }
 }

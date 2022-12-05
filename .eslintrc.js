@@ -8,7 +8,8 @@ module.exports = {
     'airbnb',
     'airbnb-typescript',
     'plugin:promise/recommended',
-    'plugin:react-hooks/recommended'
+    'plugin:react-hooks/recommended',
+    'plugin:import/typescript'
   ],
   parserOptions: {
     tsconfigRootDir: "./",
@@ -18,23 +19,19 @@ module.exports = {
   },
   plugins: [
     'react',
-    'import',
-    'promise'
+    'promise',
+    'import'
   ],
   rules: {
     'no-console': 'off',
-    'import/no-unresolved': 'error'
   },
+  parser: '@typescript-eslint/parser',
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
-    'import/resolver': 'webpack',
     'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: './tsconfig.json'
-      },
-    },
+      alwaysTryTypes: true
+    }
   },
 };
