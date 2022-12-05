@@ -1,4 +1,5 @@
 import React from 'react';
+import Login from '../Login';
 import { usersLoading } from '../../features/usersSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import './index.scss';
@@ -30,6 +31,7 @@ function App() {
         <button type="button" onClick={updateUserInfo}>更新用户信息</button>
         <p style={{ color: 'white' }}>{useAppSelector((state) => state.users.userName)}</p>
       </div>
+      <Login />
     </div>
   );
 }

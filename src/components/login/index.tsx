@@ -10,28 +10,25 @@ function Login() {
       <form className="form">
         <div className="formItem">
           <label htmlFor="username">
-            用户名:
-            <input type="text" id="username" />
+            用户名：
           </label>
+          <input type="text" id="username" />
         </div>
         <div className="formItem">
           <label htmlFor="password">
             密码：
-            <input
-              type="password"
-              id="password"
-              value={this.state.password}
-              onChange={(e) => {
-                this.setState({ password: e.target.value });
-              }}
-            />
           </label>
+          <input
+            type="password"
+            id="password"
+            onChange={(e) => { }}
+          />
         </div>
         <div
           role="presentation"
           className="loginBtn"
           onClick={() => {
-            this.handleLogin();
+
           }}
         >
           登录
