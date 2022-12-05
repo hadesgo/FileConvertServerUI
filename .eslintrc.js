@@ -12,7 +12,6 @@ module.exports = {
     'plugin:import/typescript'
   ],
   parserOptions: {
-    tsconfigRootDir: "./",
     project: './tsconfig.json',
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -31,7 +30,6 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx']
     },
     'import/resolver': {
-      alwaysTryTypes: true
     }
   },
 };

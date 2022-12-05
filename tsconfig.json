@@ -8,10 +8,6 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".", // This must be specified if "paths" is.
-    "paths": {
-      "@": ["./src"] // This mapping is relative to "baseUrl"
-    }
+    "allowSyntheticDefaultImports": true
   }
 }
