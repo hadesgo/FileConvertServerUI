@@ -1,7 +1,7 @@
 import React from 'react';
+import { usersLoading } from '@/features/usersSlice';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 import Login from '../Login';
-import { usersLoading } from '../../features/usersSlice';
-import { useAppDispatch, useAppSelector } from '../../hooks';
 import './index.scss';
 
 function App() {
