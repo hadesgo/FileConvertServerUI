@@ -9,7 +9,7 @@ module.exports = {
     'airbnb-typescript',
     'plugin:promise/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:import/typescript'
+    'plugin:import/typescript',
   ],
   parserOptions: {
     project: './tsconfig.json',
@@ -19,7 +19,7 @@ module.exports = {
   plugins: [
     'react',
     'promise',
-    'import'
+    'import',
   ],
   rules: {
     'no-console': 'off',
@@ -27,16 +27,16 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
-      "typescript": {
-        "directory": "./tsconfig.json"
+      typescript: {
+        directory: './tsconfig.json',
       },
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
